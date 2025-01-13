@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1 {
+    margin: 20px 0;
+}
+
+.draft-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.team, .champion-pool {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    background-color: #fff;
+}
+
+.team h2, .champion-pool h2 {
+    margin-bottom: 10px;
+}
+
+.selected-champions, #champion-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.champion {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: border 0.3s ease;
+}
+
+.champion:hover {
+    border-color: #007bff;
+}
+.region-filter {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.region-filter label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#region-filter {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
