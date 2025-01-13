@@ -240,19 +240,23 @@ function loadRegions() {
 
 // Load Champions from Riot API
 async function loadChampions() {
-    const version = "13.1.1"; // Replace with the latest patch version
-    const url = `https://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/champion.json`;
-
     try {
+        // Fetch the latest version dynamically
+        const versionResponse = await fetch(`https://ddragon.leagueoflegends.com/api/versions.json`);
+        const versions = await versionResponse.json();
+        const latestVersion = versions[0]; // Latest version is the first in the array
+
+        // Fetch champions using the latest version
+        const url = `https://ddragon.leagueoflegends.com/cdn/${latestVersion}/data/en_US/champion.json`;
         const response = await fetch(url);
         const data = await response.json();
         const champions = Object.values(data.data);
 
-        // Display all champions in the pool
+        // Display champions in the pool
         champions.forEach((champion) => {
             const champDiv = document.createElement("div");
             champDiv.classList.add("champion");
-            champDiv.style.backgroundImage = `url(https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${champion.image.full})`;
+            champDiv.style.backgroundImage = `url(https://ddragon.leagueoflegends.com/cdn/${latestVersion}/img/champion/${champion.image.full})`;
             champDiv.title = champion.name;
             champDiv.setAttribute("data-region", regionMapping[champion.id] || "Unknown");
 
@@ -266,6 +270,7 @@ async function loadChampions() {
         console.error("Failed to load champions:", error);
     }
 }
+
 
 function handleChampionClick(champion, champDiv) {
     if (clickCounter >= actionSequence.length) return; // Stop if all actions are complete
