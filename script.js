@@ -36,7 +36,7 @@ const regionBackgrounds = {
     "Zaun": "Champion/Zaun/Background.jpg",
     "Targon": "Champion/Targon/Background.jpg",
     "The Void": "Champion/The_Void/Background.jpg",
-    "Piltover": "Champion/Piltover/Background.jpg",
+    "Piltover": "Champion/Plitover/Background.jpg",
     "Ixtal": "Champion/Ixtal/Background.jpg",
     "Noxus": "Champion/Noxus/Background.jpg",
     "Shurima": "Champion/Shurima/Background.jpg",
