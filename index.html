@@ -4,52 +4,148 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Champion Draft</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <h1>Champion Draft System</h1>
-    <div class="draft-container">
-        <!-- Team 1 -->
-        <div class="team" id="team-1">
-            <h2>Team 1</h2>
-            <div id="team-1-status" class="status"></div>
-            <div class="ban-section" id="team-1-bans">
-                <h3>Bans</h3>
-                <div class="bans"></div>
-            </div>
-            <div class="selected-champions" id="team-1-picks">
-                <h3>Picks</h3>
-            </div>
-        </div>
+<body class="bg-black">
+    <div class="container my-5">
+        <h1 class="text-center text-primary mb-4">Champion Draft System</h1>
 
-        <!-- Champion Pool -->
-        <div class="champion-pool">
-            <h2>Champion Pool</h2>
-            <div class="region-filter">
-                <label for="region-filter">Filter by Region:</label>
-                <select id="region-filter">
+
+        <!-- Timer Controls -->
+
+        <!-- Team Timers -->
+        <div class="d-flex justify-content-between gap-4 mb-4">
+            <select id="team1-region" class="form-select">
+                <option value="All">All Regions</option>
+                <option value="Bilgewater">Bilgewater</option>
+                <option value="Demacia">Demacia</option>
+                <option value="Freljord">Freljord</option>
+                <option value="Ionia">Ionia</option>
+                <option value="Zaun">Zaun</option>
+                <option value="Targon">Targon</option>
+                <option value="The Void">The Void</option>
+                <option value="Bandle City">Bandle City</option>
+                <option value="Piltover">Piltover</option>
+                <option value="Ixtal">Ixtal</option>
+                <option value="Noxus">Noxus</option>
+                <option value="Shurima">Shurima</option>
+                <option value="Shadow Isles">Shadow Isles</option>
+                <option value="Runeterra">Runeterra</option>
+            </select>
+                <button id="toggle-timer" class="btn btn-primary">เริ่มเวลา</button>
+                <select id="team2-region" class="form-select">
                     <option value="All">All Regions</option>
+                    <option value="Bilgewater">Bilgewater</option>
+                    <option value="Demacia">Demacia</option>
+                    <option value="Freljord">Freljord</option>
+                    <option value="Ionia">Ionia</option>
+                    <option value="Zaun">Zaun</option>
+                    <option value="Targon">Targon</option>
+                    <option value="The Void">The Void</option>
+                    <option value="Bandle City">Bandle City</option>
+                    <option value="Piltover">Piltover</option>
+                    <option value="Ixtal">Ixtal</option>
+                    <option value="Noxus">Noxus</option>
+                    <option value="Shurima">Shurima</option>
+                    <option value="Shadow Isles">Shadow Isles</option>
+                    <option value="Runeterra">Runeterra</option>
                 </select>
-            </div>
-            <div id="champion-list">
-                <!-- Champions loaded dynamically -->
-            </div>
         </div>
+        <div id="status-message" class="alert alert-info text-center mb-4" role="alert">
+            ทีม 1: กรุณาแบน
+        </div>
+        
 
-        <!-- Team 2 -->
-        <div class="team" id="team-2">
-            <h2>Team 2</h2>
-            <div id="team-2-status" class="status"></div>
-            <div class="ban-section" id="team-2-bans">
-                <h3>Bans</h3>
-                <div class="bans"></div>
+        <!-- Draft Container -->
+        <div class="row draft-container">
+            <!-- Team 1 -->
+            <div class="col-md-4">
+                <div class="card border-primary mb-3">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="h5">Team 1</h2> 
+                    </div>
+                    <div id="team1-timer" class="team-timer alert alert-secondary text-center">ทีม 1: 03:00
+                    </div>
+                    <div class="card-body">
+                        <div class="ban-section mb-4">
+                            <h3 class="h6 text-white-outline">Bans</h3>
+                            <div class="bans card p-5 d-flex flex-wrap gap-2 justify-content-center"></div>
+                        </div>
+                        <div class="selected-champions">
+                            <h3 class="h6 text-white-outline">Picks</h3>
+                            <div class="picks card p-5 d-flex flex-wrap gap-2 justify-content-center"></div>
+                            <h3 id="team1-available-champions" class="h6 text-white-outline" style="display: none;">Available Champions</h3>
+                            <div id="team1-region-champions" class="d-flex flex-wrap gap-2 justify-content-center" style="display: none;">
+                                <!-- Champions from selected region for Team 1 -->
+                            </div>
+                            <h3 id="team1-yordle-header" class="h6 text-white-outline" style="display: none;">Yordle Champions</h3>
+                            <div id="team1-yordle-champions" class="d-flex flex-wrap gap-2 justify-content-center" style="display: none;">
+
+                            </div>
+                    </div>
+                    </div>
+                </div>
             </div>
-            <div class="selected-champions" id="team-2-picks">
-                <h3>Picks</h3>
+
+            <!-- Champion Pool -->
+            <div class="col-md-4">
+                <div class="card border-secondary mb-3">
+                    <div class="card-header bg-secondary text-white">
+                        <h2 class="h5 mb-0">Champion Pool</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="region-filter mb-3">
+                            <label for="region-filter" class="form-label">Filter by Region:</label>
+                            <select id="region-filter" class="form-select">
+                                <option value="All">All Regions</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <input id="champion-search" type="text" class="form-control" placeholder="ค้นหาแชมเปี้ยน...">
+                        </div>
+                        <div id="champion-list" class="d-flex flex-wrap gap-2 justify-content-center">
+                            <!-- Champions loaded dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team 2 -->
+            <div class="col-md-4">
+                <div class="card border-danger mb-3">
+                    <div class="card-header bg-danger text-white">
+                        <h2 class="h5 mb-0">Team 2</h2>
+                    </div>
+                    <div id="team2-timer" class="team-timer alert alert-secondary text-center px-4 py-3">
+                        ทีม 2: 03:00
+                    </div>
+                    <div class="card-body">
+                        <div class="ban-section mb-4">
+                            <h3 class="h6 text-white-outline">Bans</h3>
+                            <div class="bans card p-5 d-flex flex-wrap gap-2 justify-content-center"></div>
+                        </div>
+                        <div class="selected-champions">
+                            <h3 class="h6 text-white-outline">Picks</h3>
+                            <div class="picks card p-5 d-flex flex-wrap gap-2 justify-content-center"></div>
+                            <h3 id="team2-available-champions" class="h6 text-white-outline" style="display: none;">Available Champions</h3>
+                            <div id="team2-region-champions" class="d-flex flex-wrap gap-2 justify-content-center" style="display: none;">
+                                <!-- Champions from selected region for Team 1 -->
+                            </div>
+                            <h3 id="team2-yordle-header" class="h6 text-white-outline" style="display: none;">Yordle Champions</h3>
+                            <div id="team2-yordle-champions" class="d-flex flex-wrap gap-2 justify-content-center" style="display: none;">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
