@@ -61,8 +61,6 @@ let timerInterval;
 const actionSequence = [
     { team: "team1", action: "ban" },
     { team: "team2", action: "ban" },
-    { team: "team1", action: "ban" },
-    { team: "team2", action: "ban" },
     { team: "team1", action: "pick" },
     { team: "team2", action: "pick" },
     { team: "team2", action: "pick" },
