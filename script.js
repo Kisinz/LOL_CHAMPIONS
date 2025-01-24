@@ -72,7 +72,7 @@ const actionSequence = [
 ];
 
 const regionMapping = {
-    "Bilgewater": ["Fizz", "Graves", "Illaoi", "MissFortune", "Nautilus", "Pyke", "TahmKench", "TwistedFate", "Gangplank", "Nilah"],
+    "Bilgewater": ["Fizz", "Graves", "Illaoi", "Miss Fortune", "Nautilus", "Pyke", "Tahm Kench", "Twisted Fate", "Gangplank", "Nilah"],
     "Demacia": ["Fiora", "Galio", "Garen", "Jarvan IV", "Kayle", "Lucian", "Lux", "Morgana", "Poppy", "Quinn", "Shyvana", "Sona", "Sylas", "Vayne", "Xin Zhao"],
     "Freljord": ["Anivia", "Ashe","Aurora", "Braum", "Gnar", "Gragas", "Lissandra", "Nunu & Willump", "Olaf", "Ornn", "Sejuani", "Trundle", "Tryndamere", "Udyr", "Volibear"],
     "Ionia": ["Ahri", "Akali", "Hwei", "Irelia", "Ivern", "Jhin", "Karma", "Kayn", "Kennen", "Lee Sin", "Lillia", "Master Yi", "Rakan", "Sett", "Shen", "Syndra", "Varus", "Wukong", "Xayah", "Yasuo", "Yone", "Zed"],
