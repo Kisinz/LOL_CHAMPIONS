@@ -82,7 +82,7 @@ const regionMapping = {
     "Bandle City": ["Corki", "Lulu", "Rumble", "Teemo", "Tristana", "Veigar", "Yuumi"],
     "Piltover": ["Caitlyn", "Camille", "Ezreal", "Heimerdinger", "Jayce", "Orianna", "Seraphine", "Vi"],
     "Ixtal": ["Malphite", "Milio", "Neeko", "Nidalee", "Qiyana", "Rengar", "Skarner", "Zyra"],
-    "Noxus": ["Ambessa", "Briar", "Cassiopeia", "Darius", "Draven", "Katarina", "Kled", "LeBlanc", "Mordekaiser", "Rell", "Riven", "Samira", "Sion", "Swain", "Talon", "Vladimir"],
+    "Noxus": ["Ambessa", "Briar", "Cassiopeia", "Darius", "Draven", "Katarina", "Kled", "LeBlanc","Mel", "Mordekaiser", "Rell", "Riven", "Samira", "Sion", "Swain", "Talon", "Vladimir"],
     "Shurima": ["Akshan", "Amumu", "Azir", "K’Sante", "Naafiri", "Nasus", "Rammus", "Renekton", "Sivir", "Taliyah", "Xerath"],
     "Shadow Isles": ["Elise", "Gwen", "Hecarim", "Kalista", "Karthus", "Maokai", "Thresh", "Vex", "Viego", "Yorick"],
     "Runeterra": ["Bard", "Smolder", "Aatrox", "Evelynn", "Kindred", "Annie", "Zilean", "Nocturne", "Jax", "Fiddlesticks", "Alistar", "Brand", "Lucian", "Senna", "Shaco", "Ryze", "Aurelion Sol"]
